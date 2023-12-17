@@ -1,29 +1,93 @@
--- To find any highlight groups: "<cmd> Telescope highlights"
--- Each highlight group can take a table with variables fg, bg, bold, italic, etc
--- base30 variable names can also be used as colors
-
-local sep_color = '#454951'
 local M = {}
 
+local sep_color = "#454951"
+
+M.add = {
+  RainbowDelimiterRed = { fg = "red" },
+  RainbowDelimiterYellow = { fg = "yellow" },
+  RainbowDelimiterBlue = { fg = "blue" },
+  RainbowDelimiterOrange = { fg = "orange" },
+  RainbowDelimiterGreen = { fg = "green" },
+  RainbowDelimiterViolet = { fg = "purple" },
+  RainbowDelimiterCyan = { fg = "cyan" },
+
+  NvimTreeBookmark = { fg = { "red", -10 } },
+  NvimTreeBookmarkHL = {
+    fg = { "red", -10 },
+  },
+  NvimTreeOpenedFile = {
+    fg = { "yellow", -10 },
+  },
+  NvimTreeTitle = {
+    underline = true,
+    fg = { "yellow", -10 },
+    bg = "darker_black",
+    sp = sep_color,
+  },
+  NvimTreeTitleSepOn = {
+    underline = false,
+    fg = sep_color,
+    bg = "black",
+    sp = sep_color,
+  },
+  NvimTreeTitleSepOff = {
+    underline = true,
+    fg = sep_color,
+    bg = "darker_black",
+    sp = sep_color,
+  },
+  WinBar = {
+    fg = "red",
+    bg = "black",
+  },
+  WinBarNC = {
+    bg = "black",
+  },
+}
+
 M.override = {
+  FloatBorder = {
+    bg = "black",
+  },
+  CmpDocBorder = {
+    fg = { "blue", -25 },
+    bg = "black",
+  },
+  TblineFill = {
+    underline = true,
+    bg = "darker_black",
+    sp = sep_color,
+  },
+  TbLineBufOn = {
+    fg = { "yellow", -20 },
+  },
+  TbLineBufOff = {
+    underline = true,
+    fg = "grey",
+    bg = "darker_black",
+    sp = sep_color,
+  },
+  TbLineBufOffModified = {
+    bg = "darker_black",
+    underline = true,
+    sp = sep_color,
+  },
+  TbLineBufOffClose = {
+    underline = true,
+    bg = "darker_black",
+    sp = sep_color,
+  },
+  NvimTreeWinSeparator = {
+    fg = sep_color,
+    bg = "black",
+  },
   Comment = {
     italic = true,
   },
   WinSeparator = {
     fg = sep_color,
-    bg = 'black',
+    bg = "black",
   },
-}
-
-M.add = {
-  WinBar = {
-    fg = 'red',
-    bg = 'black',
-  },
-  WinBarNC = {
-    bg = 'black',
-  },
-  NvimTreeOpenedFolderName = { fg = 'green', bold = true },
 }
 
 return M
